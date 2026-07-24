@@ -1,0 +1,94 @@
+.top-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  padding-top: 6px;
+
+  ion-icon {
+    font-size: 20px;
+    color: var(--sl-accent-indigo);
+  }
+}
+
+.device-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.device-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  border-radius: var(--sl-card-radius);
+  box-shadow: var(--sl-card-shadow);
+  padding: 14px 16px;
+}
+
+.device-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #F2F2FB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  ion-icon {
+    font-size: 20px;
+    color: var(--sl-accent-indigo);
+  }
+}
+
+.device-info {
+  flex: 1;
+  min-width: 0;
+
+  h4 {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    color: var(--ion-color-primary);
+  }
+
+  p {
+    font-size: 12px;
+    color: var(--sl-muted);
+    margin: 0;
+
+    .auto { color: var(--sl-accent-indigo); }
+  }
+}
+
+.device-spark {
+  width: 90px;
+  flex-shrink: 0;
+}
+
+.update-banner {
+  background: var(--sl-accent-indigo);
+  border-radius: var(--sl-card-radius);
+  padding: 18px;
+  color: #ffffff;
+
+  h4 {
+    margin: 0 0 6px 0;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  p {
+    margin: 0 0 14px 0;
+    font-size: 13px;
+    opacity: 0.9;
+  }
+
+  .update-btn {
+    --background: #ffffff;
+    --color: var(--sl-accent-indigo);
+    font-weight: 700;
+  }
+}

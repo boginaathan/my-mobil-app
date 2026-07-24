@@ -1,0 +1,101 @@
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0 12px 0;
+
+  ion-icon { font-size: 20px; }
+}
+
+.back {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--sl-muted);
+  font-size: 15px;
+}
+
+.power-card {
+  margin-bottom: 20px;
+
+  ion-toggle {
+    --track-background-checked: var(--sl-accent-yellow);
+    transform: scale(1.1);
+    transform-origin: left center;
+  }
+}
+
+.brightness-card {
+  margin-bottom: 20px;
+  text-align: center;
+
+  .brightness-value {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--ion-color-primary);
+    margin-bottom: 8px;
+  }
+}
+
+.brightness-slider {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  ion-icon {
+    font-size: 18px;
+    color: var(--sl-accent-yellow);
+    flex-shrink: 0;
+  }
+
+  ion-range {
+    flex: 1;
+    --bar-background: #EDEEF3;
+    --bar-background-active: var(--sl-accent-yellow);
+    --knob-background: #ffffff;
+    --knob-box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+}
+
+.schedule-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.add-btn {
+  --background: var(--sl-accent-yellow);
+  --color: var(--ion-color-primary);
+  font-weight: 700;
+  height: 30px;
+  font-size: 13px;
+}
+
+.schedule-card {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.schedule-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--ion-color-primary);
+
+  &:not(:last-child) {
+    padding-bottom: 14px;
+    border-bottom: 1px solid #EDEEF3;
+  }
+}
+
+.schedule-actions {
+  display: flex;
+  gap: 12px;
+  ion-icon {
+    font-size: 16px;
+    color: var(--sl-muted);
+  }
+}

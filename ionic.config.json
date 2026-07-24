@@ -1,0 +1,7 @@
+{
+  "name": "smartlife-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,81 @@
+<ion-content [fullscreen]="true">
+  <div class="sl-content-padding">
+
+    <h1 class="sl-page-title">Statistics</h1>
+
+    <div class="sl-card expenses-card">
+      <div class="expenses-header">
+        <h3>Expenses</h3>
+        <div class="expenses-figures">
+          <div class="figure">
+            <div class="fig-value">${{ forecastCost.toFixed(2) }} <ion-icon name="trending-up" class="up"></ion-icon></div>
+            <div class="fig-label">Forecast</div>
+          </div>
+          <div class="figure">
+            <div class="fig-value">${{ currentCost.toFixed(2) }} <ion-icon name="trending-up" class="up"></ion-icon></div>
+            <div class="fig-label">Current</div>
+          </div>
+        </div>
+      </div>
+
+      <app-area-chart [series]="expenseSeries" [xLabels]="xLabels" [maxValue]="7"></app-area-chart>
+
+      <ion-segment [value]="range()" class="range-segment">
+        <ion-segment-button value="day" (click)="setRange('day')">
+          <ion-label>Day</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="week" (click)="setRange('week')">
+          <ion-label>Week</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="month" (click)="setRange('month')">
+          <ion-label>Month</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="year" (click)="setRange('year')">
+          <ion-label>Year</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+
+    <div class="two-col">
+      <div class="sl-card shares-card">
+        <h3>Shares</h3>
+        <div class="donut-wrap">
+          <app-donut-chart [slices]="shareSlices"></app-donut-chart>
+        </div>
+        <div class="legend">
+          <span class="dot indigo"></span> Water
+          <span class="dot yellow"></span> Electricity
+        </div>
+      </div>
+
+      <div class="sl-card today-card">
+        <div class="today-header">
+          <h3>Today</h3>
+          <span>{{ todayConsumedValue }}/{{ todayTotalValue }} kWh</span>
+        </div>
+        <div class="gauge-wrap">
+          <svg viewBox="0 0 120 120" class="gauge">
+            <path [attr.d]="gaugeBackgroundPath" fill="none" stroke="#EDEEF3" stroke-width="14" stroke-linecap="round"></path>
+            <path [attr.d]="gaugeValuePath" fill="none" stroke="#6C6FF0" stroke-width="14" stroke-linecap="round"></path>
+          </svg>
+          <div class="gauge-center">
+            <strong>{{ todayConsumedPercent }}%</strong>
+            <span>consumed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sl-section-label tips-label">Tips</div>
+    <div class="sl-card tip-card">
+      <div class="tip-text">
+        <h4>Automate pool temperature</h4>
+        <p>Reduce water temperature by night to save costs.</p>
+      </div>
+      <div class="tip-action">
+        View <ion-icon name="chevron-forward"></ion-icon>
+      </div>
+    </div>
+
+  </div>
+</ion-content>

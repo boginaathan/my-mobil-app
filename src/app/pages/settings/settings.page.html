@@ -1,0 +1,32 @@
+<ion-content [fullscreen]="true">
+  <div class="sl-content-padding">
+
+    <h1 class="sl-page-title">Settings</h1>
+
+    <div class="profile-card">
+      <ion-avatar>
+        <img src="assets/img/avatar.svg" alt="avatar" />
+      </ion-avatar>
+      <div>
+        <h3>{{ userName() }}</h3>
+        <p>john.doe&#64;corp.com</p>
+      </div>
+    </div>
+
+    <div class="settings-list">
+      @for (item of items; track item.label) {
+        <div class="settings-row">
+          <ion-icon [name]="item.icon"></ion-icon>
+          <span>{{ item.label }}</span>
+          <ion-icon name="chevron-forward" class="chev"></ion-icon>
+        </div>
+      }
+    </div>
+
+    <div class="settings-row logout" (click)="logOut()">
+      <ion-icon name="log-out-outline"></ion-icon>
+      <span>Log out</span>
+    </div>
+
+  </div>
+</ion-content>

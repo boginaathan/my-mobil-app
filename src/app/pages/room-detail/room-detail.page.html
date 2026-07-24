@@ -1,0 +1,58 @@
+<ion-content [fullscreen]="true">
+  <div class="sl-content-padding">
+
+    <div class="top-bar">
+      <div class="back" (click)="goBack()">
+        <ion-icon name="chevron-back"></ion-icon>
+        <span>Dashboard</span>
+      </div>
+      <div class="top-actions">
+        <ion-icon name="add"></ion-icon>
+        <ion-icon name="ellipsis-horizontal"></ion-icon>
+      </div>
+    </div>
+
+    <h1 class="sl-page-title">{{ room()?.name }}</h1>
+
+    <div class="sl-section-label">Devices</div>
+    <div class="device-grid">
+      @for (device of devices(); track device.id) {
+        <div class="device-card" [class.active]="device.on" (click)="openDevice(device.id)">
+          <h4>{{ device.name }}</h4>
+          <div class="status-row">
+            <ion-icon name="wifi"></ion-icon>
+            <span>{{ device.status }}</span>
+          </div>
+          <div class="power-row">
+            <span [class.on-text]="device.on">{{ device.on ? 'On' : 'Off' }}</span>
+            <ion-toggle [checked]="device.on" (click)="toggle(device.id, $event)"></ion-toggle>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="sl-section-label">Conditions</div>
+    <div class="sl-card conditions-card">
+      <div class="condition">
+        <ion-icon name="thermometer-outline"></ion-icon>
+        <div>
+          <strong>{{ room()?.temperature }}°C</strong>
+          <span>Temperature</span>
+        </div>
+      </div>
+      <div class="condition">
+        <ion-icon name="water-outline"></ion-icon>
+        <div>
+          <strong>{{ room()?.humidity }}%</strong>
+          <span>Humidity</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sl-section-label">Usage (kWh)</div>
+    <div class="sl-card">
+      <app-bar-chart [values]="usageValues" [labels]="usageLabels" [highlightIndexes]="[0]"></app-bar-chart>
+    </div>
+
+  </div>
+</ion-content>

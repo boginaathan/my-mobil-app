@@ -1,0 +1,44 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="signup-link">
+    <ion-text (click)="signUp()">Sign up</ion-text>
+  </div>
+
+  <div class="login-wrap">
+    <div class="brand">
+      <h1>SmartLife</h1>
+      <p>Login to your account.</p>
+    </div>
+
+    <div class="form-card">
+      <ion-item lines="none" class="sl-item">
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input [(ngModel)]="email" type="email" placeholder="you@example.com"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none" class="sl-item">
+        <ion-label position="stacked">Password</ion-label>
+        <ion-input [(ngModel)]="password" type="password"></ion-input>
+      </ion-item>
+    </div>
+
+    <ion-button expand="block" shape="round" class="sign-in-btn" (click)="signIn()">Sign in</ion-button>
+
+    <div class="forgot">
+      <ion-text>Forgot password?</ion-text>
+    </div>
+
+    <div class="divider"><span>or</span></div>
+
+    <ion-button expand="block" fill="outline" shape="round" class="oauth-btn">
+      <ion-icon slot="start" name="logo-apple"></ion-icon>
+      Sign in with Apple
+    </ion-button>
+
+    <ion-button expand="block" fill="outline" shape="round" class="oauth-btn">
+      <ion-icon slot="start" name="logo-google"></ion-icon>
+      Sign in with Google
+    </ion-button>
+
+    <p class="copyright">© 2026 SmartLife Inc.</p>
+  </div>
+</ion-content>

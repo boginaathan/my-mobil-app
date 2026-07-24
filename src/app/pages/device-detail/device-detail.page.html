@@ -1,0 +1,60 @@
+<ion-content [fullscreen]="true">
+  <div class="sl-content-padding">
+
+    <div class="top-bar">
+      <div class="back" (click)="goBack()">
+        <ion-icon name="chevron-back"></ion-icon>
+        <span>{{ device()?.room }}</span>
+      </div>
+      <ion-icon name="ellipsis-horizontal"></ion-icon>
+    </div>
+
+    <h1 class="sl-page-title">{{ device()?.name }}</h1>
+
+    @if (device(); as d) {
+      <div class="sl-section-label">Power</div>
+      <div class="sl-card power-card">
+        <ion-toggle [checked]="d.on" (ionChange)="togglePower()"></ion-toggle>
+      </div>
+
+      @if (d.brightness !== undefined) {
+        <div class="sl-section-label">Brightness</div>
+        <div class="sl-card brightness-card">
+          <div class="brightness-value">{{ d.brightness }}%</div>
+          <div class="brightness-slider">
+            <ion-icon name="sunny-outline"></ion-icon>
+            <ion-range [value]="d.brightness" min="0" max="100" (ionChange)="onBrightnessChange($event)"></ion-range>
+            <ion-icon name="sunny"></ion-icon>
+          </div>
+        </div>
+      }
+
+      @if (d.schedule?.length) {
+        <div class="schedule-header">
+          <div class="sl-section-label">Schedule</div>
+          <ion-button size="small" fill="solid" shape="round" class="add-btn">
+            <ion-icon slot="start" name="add"></ion-icon>
+            Add
+          </ion-button>
+        </div>
+        <div class="sl-card schedule-card">
+          @for (s of d.schedule; track s.id) {
+            <div class="schedule-row">
+              <span>{{ s.start }} - {{ s.end }}</span>
+              <div class="schedule-actions">
+                <ion-icon name="create-outline"></ion-icon>
+                <ion-icon name="trash-outline"></ion-icon>
+              </div>
+            </div>
+          }
+        </div>
+      }
+
+      <div class="sl-section-label">Usage (kWh)</div>
+      <div class="sl-card">
+        <app-bar-chart [values]="d.usage" [labels]="usageLabels" [highlightIndexes]="[4,6,9]"></app-bar-chart>
+      </div>
+    }
+
+  </div>
+</ion-content>

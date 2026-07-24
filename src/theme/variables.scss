@@ -1,0 +1,57 @@
+// SmartLife theme
+// Palette derived from the provided design:
+// - Deep navy for headings / primary buttons
+// - Warm yellow/amber as the brand accent (toggles, highlights, CTAs)
+// - Soft indigo/blue for charts and links
+// - Light gray app background, white cards with soft shadows
+
+:root {
+  --ion-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  // Brand
+  --ion-color-primary: #1B1D29;
+  --ion-color-primary-rgb: 27, 29, 41;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #17181f;
+  --ion-color-primary-tint: #31333e;
+
+  --ion-color-secondary: #6C6FF0;
+  --ion-color-secondary-rgb: 108, 111, 240;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #5f62d3;
+  --ion-color-secondary-tint: #7b7ef2;
+
+  --ion-color-warning: #FFCD3C;
+  --ion-color-warning-rgb: 255, 205, 60;
+  --ion-color-warning-contrast: #1B1D29;
+  --ion-color-warning-contrast-rgb: 27, 29, 41;
+  --ion-color-warning-shade: #e0b435;
+  --ion-color-warning-tint: #ffd250;
+
+  --ion-color-light: #F5F6FA;
+  --ion-color-light-rgb: 245, 246, 250;
+  --ion-color-medium: #8A8D9F;
+  --ion-color-medium-rgb: 138, 141, 159;
+  --ion-color-dark: #1B1D29;
+  --ion-color-dark-rgb: 27, 29, 41;
+
+  --ion-background-color: #F5F6FA;
+  --ion-background-color-rgb: 245, 246, 250;
+  --ion-text-color: #1B1D29;
+  --ion-text-color-rgb: 27, 29, 41;
+
+  --ion-toolbar-background: transparent;
+  --ion-tab-bar-background: #ffffff;
+
+  // Custom app tokens (used in component SCSS)
+  --sl-card-radius: 20px;
+  --sl-card-shadow: 0 6px 20px rgba(27, 29, 41, 0.06);
+  --sl-accent-yellow: #FFCD3C;
+  --sl-accent-yellow-soft: #FFE9A8;
+  --sl-accent-indigo: #6C6FF0;
+  --sl-accent-indigo-soft: #C7C8FA;
+  --sl-danger-red: #FF5A5F;
+  --sl-muted: #8A8D9F;
+}

@@ -1,0 +1,152 @@
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0 20px 0;
+}
+
+.greeting {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+}
+
+.greeting-text {
+  display: flex;
+  flex-direction: column;
+
+  .hello {
+    font-size: 13px;
+    color: var(--sl-muted);
+  }
+
+  h1 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    color: var(--ion-color-primary);
+  }
+}
+
+.add-icon {
+  font-size: 24px;
+  color: var(--sl-accent-indigo);
+}
+
+.rooms-label { margin-bottom: 10px; }
+
+.rooms-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  margin: 0 -16px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  &::-webkit-scrollbar { display: none; }
+}
+
+.room-card {
+  flex: 0 0 150px;
+  background: #ffffff;
+  border-radius: var(--sl-card-radius);
+  box-shadow: var(--sl-card-shadow);
+  padding: 16px;
+
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    color: var(--ion-color-primary);
+  }
+}
+
+.room-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--sl-muted);
+  margin-bottom: 4px;
+
+  ion-icon { font-size: 14px; }
+}
+
+.usage-card {
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  color: var(--ion-color-primary);
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--sl-muted);
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 12px;
+
+    &:first-child { margin-left: 0; }
+    &.yellow { background: var(--sl-accent-yellow); }
+    &.black { background: var(--ion-color-primary); }
+  }
+}
+
+.conditions-label { margin-bottom: 10px; }
+
+.water-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.water-info {
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    color: var(--ion-color-primary);
+  }
+  p {
+    font-size: 13px;
+    color: var(--sl-muted);
+    margin: 0;
+  }
+}
+
+.water-score {
+  background: #E6F8EE;
+  border-radius: 16px;
+  padding: 8px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .score {
+    font-size: 20px;
+    font-weight: 800;
+    color: #2BB673;
+  }
+  .score-label {
+    font-size: 11px;
+    color: #2BB673;
+  }
+}

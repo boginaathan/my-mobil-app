@@ -1,0 +1,53 @@
+/* Core Ionic CSS */
+@import "@ionic/angular/css/core.css";
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional Ionic CSS utils */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+ion-content {
+  --background: var(--ion-background-color);
+}
+
+.sl-card {
+  background: #ffffff;
+  border-radius: var(--sl-card-radius);
+  box-shadow: var(--sl-card-shadow);
+  padding: 20px;
+}
+
+.sl-page-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--ion-color-dark);
+  margin: 4px 0 16px 0;
+}
+
+.sl-section-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sl-muted);
+}
+
+.sl-content-padding {
+  padding: 16px 16px 90px 16px;
+}
+
+ion-tab-bar {
+  --border: none;
+  box-shadow: 0 -4px 16px rgba(27, 29, 41, 0.05);
+}
+
+ion-tab-button {
+  --color: var(--sl-muted);
+  --color-selected: var(--ion-color-dark);
+}

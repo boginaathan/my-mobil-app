@@ -1,0 +1,60 @@
+<ion-content [fullscreen]="true">
+  <div class="sl-content-padding">
+
+    <div class="header-row">
+      <div class="greeting">
+        <ion-avatar class="avatar">
+          <img src="assets/img/avatar.svg" alt="avatar" />
+        </ion-avatar>
+        <div class="greeting-text">
+          <span class="hello">Good morning,</span>
+          <h1>{{ userName() }}!</h1>
+        </div>
+      </div>
+      <ion-icon name="add" class="add-icon"></ion-icon>
+    </div>
+
+    <div class="sl-section-label rooms-label">Rooms</div>
+    <div class="rooms-scroll">
+      @for (room of rooms(); track room.id) {
+        <div class="room-card" (click)="openRoom(room.id)">
+          <h3>{{ room.name }}</h3>
+          <div class="room-meta">
+            <ion-icon name="wifi"></ion-icon>
+            <span>{{ room.deviceCount }} devices</span>
+          </div>
+          <div class="room-meta">
+            <ion-icon name="thermometer-outline"></ion-icon>
+            <span>{{ room.temperature }}°C</span>
+          </div>
+          <div class="room-meta">
+            <ion-icon name="water-outline"></ion-icon>
+            <span>{{ room.humidity }}%</span>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="sl-card usage-card">
+      <h3 class="card-title">Recent usage</h3>
+      <app-area-chart [series]="usageSeries" [xLabels]="xLabels" [maxValue]="90"></app-area-chart>
+      <div class="legend">
+        <span class="dot yellow"></span> Usage in kWh
+        <span class="dot black"></span> Load peak
+      </div>
+    </div>
+
+    <div class="sl-section-label conditions-label">Conditions</div>
+    <div class="sl-card water-card">
+      <div class="water-info">
+        <h3>Water quality</h3>
+        <p>pH, ORP and Alkalinity</p>
+      </div>
+      <div class="water-score">
+        <span class="score">{{ waterQualityScore }}</span>
+        <span class="score-label">Excellent</span>
+      </div>
+    </div>
+
+  </div>
+</ion-content>
